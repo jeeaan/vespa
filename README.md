@@ -1,3 +1,4 @@
+
 # Vespa
 
 Bot do telegram p/ enviar msg cada vez que um ativo "sobe" ou "desce".
@@ -28,11 +29,11 @@ Passo 5:
  
 OBS: Se for pra rodar o dia todo tem que colocar no crontab ou equivalente;
 
-```mermaid
-graph LR
-A[Pesquisa os preços] -- Primeira execução --> B[Gera o arquivo]
-A[Pesquisa os preços] -- Demais execuções --> E[Verifica o arquivo] 
-E --> D{Houve variação} 
-D --> G[Notifica]
-```
-
+## Funcionamento:
+- Primeira execução:
+  - Verifica os preços;
+  - Gera o arquivo .csv
+- Demais execuções:
+  - Verifica os preços;
+  - Consulta o arquivo .csv;
+  - Notifica os que houveram variação > PORCENTAGEM  
